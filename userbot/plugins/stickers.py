@@ -2,7 +2,9 @@
 Available Commands:
 .kangsticker [Optional Emoji]
 .packinfo
-.getsticker"""
+.getsticker
+full fix by @pureindialover
+"""
 from telethon import events
 from io import BytesIO
 from PIL import Image
