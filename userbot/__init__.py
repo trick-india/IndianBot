@@ -107,6 +107,7 @@ if bool(ENV):
     AUTONAME = os.environ.get("AUTONAME", None)
     # sticker pack name
     CUSTOM_STICKER_PACK_NAME = os.environ.get("CUSTOM_STICKER_PACK_NAME", None)
+    CUSTOM_ANIMATED_STICKER_PACK_NAME = os.environ.get("CUSTOM_ANIMATED_STICKER_PACK_NAME", None)
     # Time & Date - Country and Time Zone
     COUNTRY = str(os.environ.get("COUNTRY", "India"))
 
