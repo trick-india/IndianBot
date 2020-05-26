@@ -81,8 +81,8 @@ async def _(event):
             packshortname = "IndianBhai_ke_Animated"
         
         elif Var.CUSTOM_ANIMATED_STICKER_PACK_NAME is not None:
-        packname = f"{CUSTOM_ANIMATED_STICKER_PACK_NAME}'s IndianBot Animatedt Vol.{pack}"
-        packshortname = f"IndianBot_{userid}"
+            packname = f"{CUSTOM_ANIMATED_STICKER_PACK_NAME}'s IndianBot Animatedt Vol.{pack}"
+            packshortname = f"IndianBot_{userid}"
         
         else:
             packname = f"{DEFAULTUSER}'s IndianBot Animated Vol.{pack}"
