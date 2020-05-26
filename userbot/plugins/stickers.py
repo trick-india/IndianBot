@@ -63,7 +63,7 @@ async def _(event):
         packname = f"{CUSTOM_STICKER_PACK_NAME}'s IndianBot Vol.{pack}"
         packshortname = f"IndianBot_{userid}_kang"
     
-    else Var.CUSTOM_STICKER_PACK_NAME is None:
+    else:
         packname = f"{DEFAULTUSER}'s IndianBot Vol.{pack}"
         packshortname = f"IndianBot_{userid}_kang"
     
@@ -84,7 +84,7 @@ async def _(event):
         packname = f"{CUSTOM_ANIMATED_STICKER_PACK_NAME}'s IndianBot Animatedt Vol.{pack}"
         packshortname = f"IndianBot_{userid}"
         
-        else Var.CUSTOM_ANIMATED_STICKER_PACK_NAME is None:
+        else:
             packname = f"{DEFAULTUSER}'s IndianBot Animated Vol.{pack}"
             packshortname = f"IndianBot_{userid}"
     elif not is_message_image(reply_message):
