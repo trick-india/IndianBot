@@ -105,7 +105,8 @@ if bool(ENV):
     CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
     CUSTOM_AFK = os.environ.get("CUSTOM_AFK", None)
     AUTONAME = os.environ.get("AUTONAME", None)
-
+    # sticker pack name
+    CUSTOM_STICKER_PACK_NAME = os.environ.get("CUSTOM_STICKER_PACK_NAME", None)
     # Time & Date - Country and Time Zone
     COUNTRY = str(os.environ.get("COUNTRY", "India"))
 
