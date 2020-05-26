@@ -27,10 +27,11 @@ from telethon.tl.types import (
     MessageMediaPhoto
 )
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CUSTOM_STICKER_PACK_NAME, CUSTOM_ANIMATED_STICKER_PACK_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "IndianBot"
 FILLED_UP_DADDY = "Invalid pack selected."
+
 
 @borg.on(admin_cmd(pattern="kang ?(.*)"))
 async def _(event):
@@ -55,13 +56,19 @@ async def _(event):
     if userid == 953414679:
         packname = f"IndianBhaikeStickers"
         packshortname = "IndianBhai_ke_locker_me"
-    else:
-        packname = f"{user.first_name}'s IndianBot Vol.{pack}"
+    
+    elif Var.CUSTOM_STICKER_PACK_NAME is not None:
+        packname = f"{CUSTOM_STICKER_PACK_NAME}'s IndianBot Vol.{pack}"
         packshortname = f"IndianBot_{userid}_kang"
+    
+    else Var.CUSTOM_STICKER_PACK_NAME is None:
+        packname = f"{DEFAULTUSER}'s IndianBot Vol.{pack}"
+        packshortname = f"IndianBot_{userid}_kang"
+    
     await event.edit("`Look dat way,it's a gurl!\nMeanwhile, lemme kang this stcker over hehe ヽ༼ ಠ益ಠ ༽ﾉ`")
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@IndianArMyGiveaway.png"
+    file_ext_ns_ion = "@IndianBot_Official.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
@@ -70,9 +77,14 @@ async def _(event):
         if userid == 953414679:
             packname = f"IndiaBhaikeAnimeted"
             packshortname = "IndianBhai_ke_Animated"
-        else:
-            packname = f"{user.first_name}'s IndianBot Animated Vol.{pack}"
-            packshortname = f"IndianBot_{userid}" # format: Uni_Borg_userid
+        
+        elif Var.CUSTOM_ANIMATED_STICKER_PACK_NAME is not None:
+        packname = f"{CUSTOM_ANIMATED_STICKER_PACK_NAME}'s IndianBot Animatedt Vol.{pack}"
+        packshortname = f"IndianBot_{userid}"
+        
+        else Var.CUSTOM_ANIMATED_STICKER_PACK_NAME is None:
+            packname = f"{DEFAULTUSER}'s IndianBot Animated Vol.{pack}"
+            packshortname = f"IndianBot_{userid}"
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
@@ -132,8 +144,8 @@ async def _(event):
                 while response.text == FILLED_UP_DADDY:
                     pack += 1
                     prevv = int(pack) - 1
-                    packname = f"{user.first_name}'s IndianBot Vol.{pack}"
-                    packshortname = f"Vol_{pack}_with_{user.first_name}"
+                    packname = f"{DEFAULTUSER}'s IndianBot Vol.{pack}"
+                    packshortname = f"Vol_{pack}_with_{DEFAULTUSER}"
                     #if userid == 948408212:
                        # packname = f"{user.first_name}'s IndianBot Vol.{pack}"
                        # packshortname = "Vol._{pack}_IndianBhai_ke_locker_me"
