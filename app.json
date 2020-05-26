@@ -39,6 +39,16 @@
       "value": "",
       "required": false
     },
+    "CUSTOM_STICKER_PACK_NAME": {
+      "description": "For custom sticker pack name. if u dont know leave blank",
+      "value": "",
+      "required": false
+    },
+    "CUSTOM_ANIMATED_STICKER_PACK_NAME": {
+      "description": "For custom sticker pack name. if u dont know leave blank",
+      "value": "",
+      "required": false
+    },
     "PLUGIN_CHANNEL": {
       "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
       "value": ""
